@@ -23,4 +23,4 @@ A custom minecraft launcher to solve your minecraft-y needs! This launcher inten
 If you are interested in getting involved in the project, you can join the discord and apply for a ```developer``` role.
 If you just wish to contribute to the project you can join the discord, and apply for the ```contributor``` role with evidence of your contribution.
 
-The discord is not open at the moment so these options are not yet available
+**The discord is not open at the moment so these options are not yet available.**
