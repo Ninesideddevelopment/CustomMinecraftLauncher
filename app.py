@@ -70,11 +70,8 @@ class HomePage(ctk.CTkFrame):
 		self.Changelog = Changelog(master=self, fg_color="grey", corner_radius=0)
 		self.Changelog.place(relx=0, rely=0.5, relwidth=1, relheight=0.5)
 
-		self.playbutton = ctk.CTkButton(master=self, text="Play", command=self.play, corner_radius=0)
+		self.playbutton = ctk.CTkButton(master=self, text="Play", command=self.master.play_button_function, corner_radius=0)
 		self.playbutton.place(relx=0.5, rely=0.5, anchor=ctk.CENTER)
-
-	def play(self):
-		pass
 
 	def hide(self):
 		self.grid_remove()
@@ -127,3 +124,6 @@ class App(ctk.CTk):
 
 	def customise_button_function(self):
 		self.homepage.hide()
+
+	def play_button_function(self):
+		launch()
