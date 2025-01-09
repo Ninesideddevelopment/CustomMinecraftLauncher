@@ -11,7 +11,7 @@ class SBarAccountWidget(ctk.CTkFrame):
 	def __init__(self, master, **kwargs):
 		super().__init__(master, **kwargs)
 
-		self.name = ctk.CTkLabel(master=self, text="NinesidedYT")
+		self.name = ctk.CTkLabel(master=self, text="Username")
 		self.name.place(relx=0, relwidth=1, rely=0)
 
 		self.accountbutton = ctk.CTkButton(master=self, text="Account", corner_radius=0)
