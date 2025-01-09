@@ -24,3 +24,8 @@ If you are interested in getting involved in the project, you can join the disco
 If you just wish to contribute to the project you can join the discord, and apply for the ```contributor``` role with evidence of your contribution.
 
 **The discord is not open at the moment so these options are not yet available.**
+
+# FAQ and need-to-knows:
+
+## Minecraft not launching?
+  If you are on newer versions (you can sign into your microsoft account), then check your minecraft logs, and maybe file a issue. If you are on an older version, then that is because I may have disconected the launch function for legal reasons. <details><summary>Legal Reasons</summary> Basically hidden in the files is a way to launch minecraft with the test options (without a minecraft/microsoft account, so for free), and if I released that to the public with access to the test options, then mojang would probably sue us. </details>
