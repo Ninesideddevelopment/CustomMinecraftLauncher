@@ -7,6 +7,7 @@ A custom minecraft launcher to solve your minecraft-y needs! This launcher inten
 <ins>__Pre-Alpha-To-Do-List__:
   - [ ] Finish Basic Customization functionality
   - [ ] Music Playlists
+  - [ ] Music Mixer
   - [ ] Add both Minecraft changelog and launcher changelog
 
 <ins>__Alpha-To-Do-List__:
