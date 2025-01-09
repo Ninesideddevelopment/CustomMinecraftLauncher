@@ -1,0 +1,215 @@
+[12:58:45] [Datafixer Bootstrap/INFO]: 243 Datafixer optimizations took 334 milliseconds
+[12:58:49] [Render thread/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[12:58:49] [Render thread/INFO]: Setting user: Player836
+[12:58:49] [Render thread/INFO]: Backend library: LWJGL version 3.3.3+5
+[12:58:49] [Download-2/ERROR]: Failed to fetch user properties
+com.mojang.authlib.exceptions.InvalidCredentialsException: Status: 401
+	at com.mojang.authlib.exceptions.MinecraftClientHttpException.toAuthenticationException(MinecraftClientHttpException.java:59) ~[authlib-6.0.57.jar:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilUserApiService.fetchProperties(YggdrasilUserApiService.java:150) ~[authlib-6.0.57.jar:?]
+	at flk.bL(SourceFile:457) ~[1.21.4.jar:?]
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+Caused by: com.mojang.authlib.exceptions.MinecraftClientHttpException: Status: 401
+	at com.mojang.authlib.minecraft.client.MinecraftClient.readInputStream(MinecraftClient.java:103) ~[authlib-6.0.57.jar:?]
+	at com.mojang.authlib.minecraft.client.MinecraftClient.get(MinecraftClient.java:56) ~[authlib-6.0.57.jar:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilUserApiService.fetchProperties(YggdrasilUserApiService.java:121) ~[authlib-6.0.57.jar:?]
+	... 5 more
+[12:58:49] [Render thread/ERROR]: Failed to open pack C:\Users\Henry Watts\AppData\Roaming\.minecraft\resourcepacks\ADS 0.0.1.zip
+java.util.zip.ZipException: invalid CEN header (bad entry name or comment)
+	at java.base/java.util.zip.ZipFile$Source.zerror(ZipFile.java:1781) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.checkAndAddEntry(ZipFile.java:1255) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.initCEN(ZipFile.java:1720) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.<init>(ZipFile.java:1495) ~[?:?]
+	at java.base/java.util.zip.ZipFile$Source.get(ZipFile.java:1458) ~[?:?]
+	at java.base/java.util.zip.ZipFile$CleanableResource.<init>(ZipFile.java:724) ~[?:?]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:251) ~[?:?]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:180) ~[?:?]
+	at java.base/java.util.zip.ZipFile.<init>(ZipFile.java:194) ~[?:?]
+	at asz$b.a(SourceFile:172) ~[1.21.4.jar:?]
+	at asz.b(SourceFile:61) ~[1.21.4.jar:?]
+	at asz.a(SourceFile:43) ~[1.21.4.jar:?]
+	at ast.a(SourceFile:29) ~[1.21.4.jar:?]
+	at atx.a(SourceFile:55) ~[1.21.4.jar:?]
+	at atx.a(SourceFile:41) ~[1.21.4.jar:?]
+	at atv.a(SourceFile:63) ~[1.21.4.jar:?]
+	at atv.a(SourceFile:94) [1.21.4.jar:?]
+	at atv.loadPacks(SourceFile:59) [1.21.4.jar:?]
+	at aua.i(SourceFile:43) [1.21.4.jar:?]
+	at aua.a(SourceFile:36) [1.21.4.jar:?]
+	at flk.<init>(SourceFile:541) [1.21.4.jar:?]
+	at net.minecraft.client.main.Main.main(SourceFile:250) [1.21.4.jar:?]
+[12:58:49] [Render thread/WARN]: Missing metadata in pack file/ADS 0.0.1.zip
+[12:58:49] [Render thread/ERROR]: Couldn't load pack metadata
+com.google.gson.JsonParseException: java.io.EOFException: End of input at line 1 column 1 path $
+	at ayp.a(SourceFile:527) ~[1.21.4.jar:?]
+	at ayp.b(SourceFile:532) ~[1.21.4.jar:?]
+	at ayp.a(SourceFile:594) ~[1.21.4.jar:?]
+	at ayp.a(SourceFile:602) ~[1.21.4.jar:?]
+	at ast.a(SourceFile:42) ~[1.21.4.jar:?]
+	at ast.a(SourceFile:34) ~[1.21.4.jar:?]
+	at atx.a(SourceFile:55) ~[1.21.4.jar:?]
+	at atx.a(SourceFile:41) ~[1.21.4.jar:?]
+	at atv.a(SourceFile:63) ~[1.21.4.jar:?]
+	at atv.a(SourceFile:94) [1.21.4.jar:?]
+	at atv.loadPacks(SourceFile:59) [1.21.4.jar:?]
+	at aua.i(SourceFile:43) [1.21.4.jar:?]
+	at aua.a(SourceFile:36) [1.21.4.jar:?]
+	at flk.<init>(SourceFile:541) [1.21.4.jar:?]
+	at net.minecraft.client.main.Main.main(SourceFile:250) [1.21.4.jar:?]
+Caused by: java.io.EOFException: End of input at line 1 column 1 path $
+	at com.google.gson.stream.JsonReader.nextNonWhitespace(JsonReader.java:1542) ~[gson-2.11.0.jar:?]
+	at com.google.gson.stream.JsonReader.doPeek(JsonReader.java:632) ~[gson-2.11.0.jar:?]
+	at com.google.gson.stream.JsonReader.peek(JsonReader.java:507) ~[gson-2.11.0.jar:?]
+	at com.google.gson.internal.bind.TypeAdapters$28.read(TypeAdapters.java:865) ~[gson-2.11.0.jar:?]
+	at com.google.gson.internal.bind.TypeAdapters$28.read(TypeAdapters.java:820) ~[gson-2.11.0.jar:?]
+	at com.google.gson.internal.bind.TypeAdapters$34$1.read(TypeAdapters.java:1144) ~[gson-2.11.0.jar:?]
+	at ayp.a(SourceFile:525) ~[1.21.4.jar:?]
+	... 14 more
+[12:58:49] [Render thread/WARN]: Missing metadata in pack file/assets.zip
+[12:58:50] [Render thread/WARN]: Pack file/LowOnFire_1.21.zip declared support for versions [18, 22] but declared main format is 34, defaulting to 34
+[12:58:50] [Render thread/WARN]: Removed resource pack fabric from options because it doesn't seem to exist anymore
+[12:58:50] [Render thread/WARN]: Removed resource pack continuity:default from options because it doesn't seem to exist anymore
+[12:58:50] [Render thread/WARN]: Removed resource pack continuity:glass_pane_culling_fix from options because it doesn't seem to exist anymore
+[12:58:50] [Render thread/INFO]: Reloading ResourceManager: vanilla, file/!§bCreakingVines.zip, file/!§bFallingLeaves.zip, file/Better Carpets 1.19.4.zip, file/Better-Leaves-9.0.zip, file/Enchanting Table Magic Circle v1.1.zip, file/Fancy Crops v1.0 f5-34.zip, file/Icons-Additions-1.2v.zip, file/LowOnFire_1.21.zip, file/More_Azaleas_(1.21).zip, file/More_Fungi_(1.21).zip, file/More_Hanging_Roots_(1.21).zip, file/More_Nether_Fungi_(1.21).zip, file/More_Nether_Roots_(1.21).zip, file/Neko's Better Enchanting Table.zip, file/Rethoughted Trident.zip, file/Spring_Flowers_(1.21).zip, file/Theone's Eating Animation Pack v1.0.zip, file/Varied_Pumpkins_v120.zip, file/astraliyte-s-animated-textures-v1-4.zip, file/bedrock-weather-fogless 1.4.zip, file/better_flame_particles-v2.2-mc1.14x-1.21x-resourcepack.zip, file/qrafty's-capitalized-font.zip, file/true-ending-dragon-music-v1.zip, file/§eBoss §9Crosshair-7.zip, file/§e§l3D §6§lPlus §8[0.0.6]§0.zip, file/AL's Raid Captains 1.1.zip, file/FreshAnimations_v1.9.3.zip, file/FA+All_Extensions-v1.4.zip, file/Fresh-Dungeons-1.20.1.zip, file/Better Skeletons.zip, file/Dungeons-Style-1.20.1-0.5.1.zip, file/MJs_Enchantments.zip
+[12:58:50] [Worker-Main-14/INFO]: Found unifont_jp_patch-16.0.01.hex, loading
+[12:58:50] [Worker-Main-15/INFO]: Found unifont_all_no_pua-16.0.01.hex, loading
+[12:58:51] [Worker-Main-18/WARN]: Unresolved texture references in minecraft:brown_mushroom#inventory:
+	#particle-> #cross
+
+[12:58:51] [Worker-Main-18/WARN]: Unresolved texture references in minecraft:crimson_fungus#inventory:
+	#particle-> #cross
+
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:tnt_minecart#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:spruce_chest_boat#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:dark_oak_boat#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:mangrove_boat#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:jungle_hanging_sign#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:oak_sign#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:birch_sign#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:warped_hanging_sign#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:crimson_sign#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:beetroots#age=1:
+    #missing
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:birch_hanging_sign#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:furnace_minecart#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:cherry_chest_boat#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:chest_minecart#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:mangrove_hanging_sign#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:dark_oak_chest_boat#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:brown_mushroom#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:bamboo_raft#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:jungle_boat#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:acacia_hanging_sign#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:cherry_sign#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:mangrove_chest_boat#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:acacia_boat#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:nether_wart#age=3:
+    #missing
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:sunflower#half=upper:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:dark_oak_hanging_sign#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:oak_hanging_sign#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:dragon_breath#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:oak_chest_boat#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:command_block_minecart#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:dark_oak_sign#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:crimson_fungus#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:bamboo_hanging_sign#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:potion#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:jungle_sign#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:spruce_sign#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:birch_boat#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:cherry_boat#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:birch_chest_boat#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:bamboo_chest_raft#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:oak_boat#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:mangrove_sign#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:crimson_hanging_sign#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:spruce_boat#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:acacia_chest_boat#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:acacia_sign#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:honey_bottle#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:bamboo_sign#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:warped_sign#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:fishing_rod#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:spruce_hanging_sign#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:cherry_hanging_sign#inventory:
+    particle
+[12:58:51] [Worker-Main-18/WARN]: Missing texture references in model minecraft:jungle_chest_boat#inventory:
+    particle
+[12:58:52] [Render thread/INFO]: OpenAL initialized on device OpenAL Soft on Realtek HD Audio 2nd output (Realtek(R) Audio)
+[12:58:52] [Render thread/INFO]: Sound engine started
+[12:58:52] [Render thread/INFO]: Created: 2048x1024x4 minecraft:textures/atlas/blocks.png-atlas
+[12:58:52] [Render thread/INFO]: Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
+[12:58:52] [Render thread/INFO]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[12:58:52] [Render thread/INFO]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[12:58:52] [Render thread/INFO]: Created: 2048x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
+[12:58:52] [Render thread/INFO]: Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
+[12:58:52] [Render thread/INFO]: Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[12:58:52] [Render thread/INFO]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[12:58:52] [Render thread/INFO]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[12:58:52] [Render thread/INFO]: Created: 64x64x0 minecraft:textures/atlas/map_decorations.png-atlas
+[12:58:52] [Render thread/INFO]: Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
+[12:58:52] [Render thread/INFO]: Created: 512x256x0 minecraft:textures/atlas/paintings.png-atlas
+[12:58:52] [Render thread/INFO]: Created: 256x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[12:58:52] [Render thread/INFO]: Created: 1024x512x0 minecraft:textures/atlas/gui.png-atlas
+[12:58:52] [IO-Worker-1/ERROR]: Couldn't connect to realms
+fih: Realms service error (400) with no payload
+	at fgl.a(SourceFile:449) ~[1.21.4.jar:?]
+	at fgl.g(SourceFile:232) ~[1.21.4.jar:?]
+	at fgf.c(SourceFile:51) ~[1.21.4.jar:?]
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+[12:58:55] [Render thread/INFO]: Stopping!
