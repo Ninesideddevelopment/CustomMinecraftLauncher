@@ -1,3 +1,9 @@
 {
-    "floating": false
+    "ctk_specific_arguments": {
+        "corner_radius": 10,
+        "border_width": 0
+    },
+    "launcher_specific_arguments": {
+        "floating": false
+    }
 }
