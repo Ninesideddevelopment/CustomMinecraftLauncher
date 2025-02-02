@@ -28,13 +28,6 @@ class Sidebar(ctk.CTkFrame):
         self.grid_columnconfigure(0, weight=1)
         self.grid_rowconfigure(3, weight=1)
 
-        style_data = styles_loader.load_json_style(json_path="assets/styles/default/widgets/sidebar/data.json")
-        print(style_data)
-        for i in style_data:
-        	for j in style_data[i]:
-        		print(f'self.{j} = {style_data[i][j]}')
-        		exec(f'self.{j} = {style_data[i][j]}')
-
         self.homebutton = ctk.CTkButton(master=self, text="Home", command=self.master.homepage_button_function, corner_radius=0)
         self.homebutton.grid(row=0, column=0, pady=5)
 
@@ -107,12 +100,20 @@ class App(ctk.CTk):
 		self.grid_columnconfigure(1, weight=1)
 
 		self.homepage = HomePage(master=self, corner_radius=0, fg_color="black")
-		self.homepage.grid(row=0, column=1, padx=0, pady=0, sticky="nsew")
 
 		self.sidebar = Sidebar(master=self)
-		self.sidebar.grid(row=0, column=0, padx=0, pady=0, sticky="nsew")
 
 		self.music_player = AudioPlayerClass(f"assets/styles/{self.style}/music/music.wav")
+
+		style = styles_loader.load_ctk_style(json_path="assets/styles/default/style.json")
+		for arg in style:
+			print(arg)
+			exec(arg)
+			self.sidebar.update()
+			self.homepage.update()
+
+		self.homepage.grid(row=0, column=1, padx=0, pady=0, sticky="nsew")
+		self.sidebar.grid(row=0, column=0, padx=0, pady=0, sticky="nsew")
 
 	def music_loop(self):
 		self.music_player.play_audio()

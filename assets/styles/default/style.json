@@ -1,0 +1,13 @@
+{
+	"widgets": {
+		"sidebar": {
+			"ctk_args": {"corner_radius": 0,
+        				 "border_width": 10,
+        				 "border_color": "'#000000'"}
+        },
+        "homepage": {
+        	"ctk_args": {"corner_radius": 0, 
+        				 "border_width": 30}
+        }
+	}
+}
