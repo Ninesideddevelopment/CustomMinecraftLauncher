@@ -28,14 +28,20 @@ class Sidebar(ctk.CTkFrame):
         self.grid_columnconfigure(0, weight=1)
         self.grid_rowconfigure(3, weight=1)
 
-        self.homebutton = ctk.CTkButton(master=self, text="Home", command=self.master.homepage_button_function, corner_radius=0)
-        self.homebutton.grid(row=0, column=0, pady=5)
+        self.homebutton = ctk.CTkButton(master=self, text="", command=self.master.homepage_button_function, corner_radius=0, hover_color="#1E1E1E", width=170, height=50, image=ctk.CTkImage(light_image=Image.open(f"assets/styles/{self.master.style}/assets/sidebar/HomeButton.png"), 
+											 																										dark_image=Image.open(f"assets/styles/{self.master.style}/assets/sidebar/HomeButton.png"),
+											 																										size=(170, 50)), fg_color="#1E1E1E")
+        self.homebutton.grid(row=0, column=0, pady=1)
 
-        self.friendsbutton = ctk.CTkButton(master=self, text="Friends", command=self.master.friends_button_function, corner_radius=0)
-        self.friendsbutton.grid(row=1, column=0, pady=5)
+        self.friendsbutton = ctk.CTkButton(master=self, text="", command=self.master.friends_button_function, corner_radius=0, hover_color="#1E1E1E", width=170, height=50, image=ctk.CTkImage(light_image=Image.open(f"assets/styles/{self.master.style}/assets/sidebar/HomeButton.png"), 
+											 																										  dark_image=Image.open(f"assets/styles/{self.master.style}/assets/sidebar/FriendsButton.png"),
+											 																										  size=(170, 50)), fg_color="#1E1E1E")
+        self.friendsbutton.grid(row=1, column=0, pady=1)
 
-        self.installationsbutton = ctk.CTkButton(master=self, text="Installations", command=self.master.installations_button_function, corner_radius=0)
-        self.installationsbutton.grid(row=2, column=0, pady=5)
+        self.installationsbutton = ctk.CTkButton(master=self, text="", command=self.master.installations_button_function, corner_radius=0, hover_color="#1E1E1E", width=170, height=50, image=ctk.CTkImage(light_image=Image.open(f"assets/styles/{self.master.style}/assets/sidebar/InstallationsButton.png"), 
+											 																										  dark_image=Image.open(f"assets/styles/{self.master.style}/assets/sidebar/InstallationsButton.png"),
+											 																										  size=(170, 50)), fg_color="#1E1E1E")
+        self.installationsbutton.grid(row=2, column=0, pady=1)
 
         self.settingsbutton = ctk.CTkButton(master=self, text="Settings", command=self.master.settings_button_function, corner_radius=0)
         self.settingsbutton.grid(row=3, column=0, sticky=ctk.S, pady=90)
@@ -43,8 +49,8 @@ class Sidebar(ctk.CTkFrame):
         self.customisebutton = ctk.CTkButton(master=self, text="Customisation", command=self.master.customise_button_function, corner_radius=0)
         self.customisebutton.grid(row=3, column=0, sticky=ctk.S, pady=50)
 
-        self.accountswidget = SBarAccountWidget(master=self)
-        self.accountswidget.grid(row=4, column=0, sticky=ctk.S)
+        #self.accountswidget = SBarAccountWidget(master=self)
+        #self.accountswidget.grid(row=4, column=0, sticky=ctk.S)
 
 class Changelog(ctk.CTkFrame):
 	def __init__(self, master, **kwargs):
@@ -59,8 +65,8 @@ class HomePage(ctk.CTkFrame):
 	def __init__(self, master, **kwargs):
 		super().__init__(master, **kwargs)
 
-		self.bannerimage = ctk.CTkImage(light_image=Image.open(f"assets/styles/{self.master.style}/images/homepage/banner.png"), 
-											 dark_image=Image.open(f"assets/styles/{self.master.style}/images/homepage/banner.png"),
+		self.bannerimage = ctk.CTkImage(light_image=Image.open(f"assets/styles/{self.master.style}/assets/homepage/banner.png"), 
+											 dark_image=Image.open(f"assets/styles/{self.master.style}/assets/homepage/banner.png"),
 											 size=(1920, 1080))
 		self.bannerlabel = ctk.CTkLabel(master=self, image=self.bannerimage, text="")
 		self.bannerlabel.place(relx=0.5, rely=0.25, anchor=ctk.CENTER)
@@ -101,7 +107,7 @@ class App(ctk.CTk):
 
 		self.homepage = HomePage(master=self, corner_radius=0, fg_color="black")
 
-		self.sidebar = Sidebar(master=self)
+		self.sidebar = Sidebar(master=self, fg_color="#1E1E1E")
 
 		self.music_player = AudioPlayerClass(f"assets/styles/{self.style}/music/music.wav")
 
