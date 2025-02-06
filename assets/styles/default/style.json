@@ -1,13 +1,36 @@
 {
 	"widgets": {
 		"sidebar": {
-			"ctk_args": {"corner_radius": 0,
-        				 "border_width": 0,
-        				 "border_color": "'#000000'"}
+			"ctk_args": {
+				"corner_radius": 10,
+        		"border_width": 0,
+        		"border_color": "'#000000'"
+			},
+        	"children": {
+        		"homebutton": {
+        			"ctk_args": {},
+        			"assets": {"image": "assets/sidebar/HomeButton.png",
+        					   "image_down": "assets/sidebar/HomeButtonDown.png",
+        					   "icon": "assets/sidebar/HomeButtonIcon.png"}
+        		},
+        		"friendsbutton": {
+        			"ctk_args": {},
+        			"assets": {"image": "assets/sidebar/FriendsButton.png",
+        					   "image_down": "assets/sidebar/FriendsButtonDown.png",
+        					   "icon": "assets/sidebar/FriendsButtonIcon.png"}
+        		},
+        		"installationsbutton": {
+        			"ctk_args": {},
+        			"assets": {"image": "assets/sidebar/InstallationsButton.png",
+        					   "image_down": "assets/sidebar/InstallationsButtonDown.png",
+        					   "icon": "assets/sidebar/InstallationsButtonIcon.png"}
+        		}
+        	}
         },
         "homepage": {
         	"ctk_args": {"corner_radius": 0, 
-        				 "border_width": 0}
+        				 "border_width": 0},
+        	"children": {}
         }
 	}
 }
