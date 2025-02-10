@@ -42,7 +42,7 @@ class Sidebar(ctk.CTkFrame):
 											 																										dark_image=Image.open(f"assets/styles/{self.master.style_name}/assets/sidebar/HomeButton.png"),
 											 																										size=(170, 50)), fg_color="#1E1E1E")
         self.homebutton.bind('<ButtonRelease-1>', lambda event: self.master.homepage_button_function())
-        self.homebutton.grid(row=0, column=0, padx=10, pady=(10, 0))
+        self.homebutton.grid(row=0, column=0, pady=(100, 0), padx=10)
 
         self.friendsbutton = ctk.CTkButton(master=self, text="", corner_radius=0, hover_color="#1E1E1E", width=170, height=50, image=ctk.CTkImage(light_image=Image.open(f"assets/styles/{self.master.style_name}/assets/sidebar/HomeButton.png"), 
 											 																										  dark_image=Image.open(f"assets/styles/{self.master.style_name}/assets/sidebar/FriendsButton.png"),
@@ -56,13 +56,13 @@ class Sidebar(ctk.CTkFrame):
         self.installationsbutton.bind('<ButtonRelease-1>', lambda event: self.master.installations_button_function())
         self.installationsbutton.grid(row=2, column=0, padx=10)
 
-        self.settingsbutton = ctk.CTkButton(master=self, text="Settings", corner_radius=0)
-        self.settingsbutton.bind('<ButtonRelease-1>', lambda event: self.master.settings_button_function())
-        self.settingsbutton.grid(row=3, column=0, sticky=ctk.S, pady=90, padx=10)
-
         self.customisebutton = ctk.CTkButton(master=self, text="Customisation", corner_radius=0)
         self.customisebutton.bind('<ButtonRelease-1>', lambda event: self.master.customise_button_function())
-        self.customisebutton.grid(row=3, column=0, sticky=ctk.S, pady=50, padx=10)
+        self.customisebutton.grid(row=3, column=0, sticky=ctk.S, pady=90, padx=10)
+
+        self.settingsbutton = ctk.CTkButton(master=self, text="Settings", corner_radius=0)
+        self.settingsbutton.bind('<ButtonRelease-1>', lambda event: self.master.settings_button_function())
+        self.settingsbutton.grid(row=3, column=0, sticky=ctk.S, pady=50, padx=10)
 
         #self.accountswidget = SBarAccountWidget(master=self)
         #self.accountswidget.grid(row=4, column=0, sticky=ctk.S)
@@ -86,11 +86,11 @@ class HomePage(ctk.CTkFrame):
 		self.bannerlabel = ctk.CTkLabel(master=self, image=self.bannerimage, text="")
 		self.bannerlabel.place(relx=0.5, rely=0.25, anchor=ctk.CENTER)
 
-		self.below = ctk.CTkFrame(master=self, corner_radius=0, fg_color="black")
+		self.below = ctk.CTkFrame(master=self, corner_radius=0, fg_color="#181818")
 		self.below.place(relx=0, rely=0.5, relwidth=2, relheight=0.5, anchor=ctk.N)
 
-		self.Changelog = Changelog(master=self, fg_color="grey", corner_radius=0)
-		self.Changelog.place(relx=0, rely=0.5, relwidth=1, relheight=0.5)
+		#self.Changelog = Changelog(master=self, fg_color="grey", corner_radius=0)
+		#self.Changelog.place(relx=0, rely=0.5, relwidth=1, relheight=0.5)
 
 		self.playbutton = ctk.CTkButton(master=self, text="Play", command=self.master.play_button_function, corner_radius=0)
 		self.playbutton.place(relx=0.5, rely=0.5, anchor=ctk.CENTER)
@@ -105,7 +105,7 @@ class App(ctk.CTk):
 	def __init__(self, title="Custom Minecraft Launcher"):
 		super().__init__()
 
-		self.style_name = "default"
+		self.style_name = "Mojang-Style"
 
 		self.mojang_news = fetch_mojang_news("data/minecraft_news.json")
 
@@ -120,13 +120,13 @@ class App(ctk.CTk):
 		self.grid_columnconfigure(0, weight=0)
 		self.grid_columnconfigure(1, weight=1)
 
-		self.homepage = HomePage(master=self, corner_radius=0, fg_color="black")
+		self.homepage = HomePage(master=self, corner_radius=0, fg_color="#181818")
 
 		self.sidebar = Sidebar(master=self, fg_color="#1E1E1E")
 
 		self.music_player = AudioPlayerClass(f"assets/styles/{self.style_name}/music/music.wav")
 
-		style, self.style_assets = styles_loader.load_style(json_path="assets/styles/default/style.json")
+		style, self.style_assets = styles_loader.load_style(json_path=f"assets/styles/{self.style_name}/style.json")
 		for arg in style:
 			print(arg)
 			exec(arg)
@@ -162,27 +162,15 @@ class App(ctk.CTk):
 
 	def settings_button_function(self):
 		self.homepage.hide()
-		self.sidebar.homebutton.configure(image=ctk.CTkImage(light_image=Image.open(f"assets/styles/{self.style_name}/assets/sidebar/HomeButton.png"), 
-			dark_image=Image.open(f"assets/styles/{self.style_name}/assets/sidebar/HomeButton.png"),
-			size=(170, 50)))
-		self.sidebar.homebutton.configure(image=ctk.CTkImage(light_image=Image.open(f"assets/styles/{self.style_name}/assets/sidebar/HomeButton.png"), 
-			dark_image=Image.open(f"assets/styles/{self.style_name}/assets/sidebar/HomeButton.png"),
-			size=(170, 50)))
-		self.sidebar.homebutton.configure(image=ctk.CTkImage(light_image=Image.open(f"assets/styles/{self.style_name}/assets/sidebar/HomeButton.png"), 
-			dark_image=Image.open(f"assets/styles/{self.style_name}/assets/sidebar/HomeButton.png"),
-			size=(170, 50)))
+		button_up(self=self, button="installationsbutton", button_location="self.sidebar", style_name=self.style_name, style_assets=self.style_assets)
+		button_up(self=self, button="homebutton", button_location="self.sidebar", style_name=self.style_name, style_assets=self.style_assets)
+		button_up(self=self, button="friendsbutton", button_location="self.sidebar", style_name=self.style_name, style_assets=self.style_assets)
 
 	def customise_button_function(self):
 		self.homepage.hide()
-		self.sidebar.homebutton.configure(image=ctk.CTkImage(light_image=Image.open(f"assets/styles/{self.style_name}/assets/sidebar/HomeButton.png"), 
-			dark_image=Image.open(f"assets/styles/{self.style_name}/assets/sidebar/HomeButton.png"),
-			size=(170, 50)))
-		self.sidebar.homebutton.configure(image=ctk.CTkImage(light_image=Image.open(f"assets/styles/{self.style_name}/assets/sidebar/HomeButton.png"), 
-			dark_image=Image.open(f"assets/styles/{self.style_name}/assets/sidebar/HomeButton.png"),
-			size=(170, 50)))
-		self.sidebar.homebutton.configure(image=ctk.CTkImage(light_image=Image.open(f"assets/styles/{self.style_name}/assets/sidebar/HomeButton.png"), 
-			dark_image=Image.open(f"assets/styles/{self.style_name}/assets/sidebar/HomeButton.png"),
-			size=(170, 50)))
+		button_up(self=self, button="installationsbutton", button_location="self.sidebar", style_name=self.style_name, style_assets=self.style_assets)
+		button_up(self=self, button="homebutton", button_location="self.sidebar", style_name=self.style_name, style_assets=self.style_assets)
+		button_up(self=self, button="friendsbutton", button_location="self.sidebar", style_name=self.style_name, style_assets=self.style_assets)
 
 	def play_button_function(self):
 		launch()
