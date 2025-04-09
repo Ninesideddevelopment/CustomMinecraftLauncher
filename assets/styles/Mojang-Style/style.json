@@ -2,10 +2,11 @@
 	"widgets": {
 		"sidebar": {
 			"ctk_args": {
-				"corner_radius": 10,
+				"corner_radius": 0,
         		"border_width": 0,
         		"border_color": "'#000000'"
 			},
+			"assets": {},
         	"children": {
         		"homebutton": {
         			"ctk_args": {},
@@ -30,6 +31,7 @@
         "homepage": {
         	"ctk_args": {"corner_radius": 0, 
         				 "border_width": 0},
+        	"assets": {"background_image": "assets/homepage/banner.png"},
         	"children": {}
         }
 	}
